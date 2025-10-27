@@ -1,10 +1,11 @@
 name: Build and push Docker image
 
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version or tag"
+        required: true
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
