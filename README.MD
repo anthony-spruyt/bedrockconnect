@@ -1,4 +1,4 @@
-![Build and push Docker image](https://github.com/aspruyt/bedrockconnect/actions/workflows/docker-publish.yml/badge.svg?branch=main)
+[![Build and push Docker image](https://github.com/anthony-spruyt/bedrockconnect/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/anthony-spruyt/bedrockconnect/actions/workflows/docker-publish.yml)
 
 To manually update to a new version of Minecraft run the following:
 
