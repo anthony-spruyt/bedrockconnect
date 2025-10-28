@@ -1,5 +1,6 @@
 name: Build and push Docker image
-
+permissions:
+  contents: write
 on:
   workflow_dispatch:
     inputs:
@@ -26,6 +27,17 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            VERSION=${{ github.event.inputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             aspruyt/bedrockconnect:${{ github.event.inputs.version }}
             aspruyt/bedrockconnect:latest
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          draft: false
+          prerelease: false
