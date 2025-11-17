@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:25-jre
 ARG VERSION="1.60"
 LABEL org.opencontainers.image.title="BedrockConnect" \
       org.opencontainers.image.version=${VERSION} \
