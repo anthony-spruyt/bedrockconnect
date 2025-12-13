@@ -7,7 +7,8 @@
 		"source=${localEnv:HOME}/.devcontainer/scripts,target=/workspaces/bedrockconnect/.devcontainer/scripts,type=bind"
 	],
 	"features": {
-		"ghcr.io/devcontainers/features/github-cli:1": {}
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+    	"ghcr.io/devcontainers/features/docker-in-docker": {}
 	},
 	"postCreateCommand": "bash -lc \"cd ${containerWorkspaceFolder} && ./.devcontainer/scripts/init-git-user.sh\"",
 	"customizations": {

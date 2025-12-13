@@ -1,6 +1,6 @@
-ARG VERSION="1.63"
 ARG JAVA_VERSION="25-jre"
 FROM eclipse-temurin:${JAVA_VERSION}
+ARG VERSION="1.63"
 LABEL org.opencontainers.image.title="BedrockConnect" \
       org.opencontainers.image.version=${VERSION} \
       org.opencontainers.image.source="https://github.com/anthony-spruyt/bedrockconnect" \

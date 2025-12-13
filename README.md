@@ -18,8 +18,8 @@ Minecraft Bedrock dedicated server connector for routing player connections.
 To build and push a specific version manually:
 
 ```bash
-docker build --build-arg VERSION=<version> -t aspruyt/bedrockconnect:<version> .
-docker push aspruyt/bedrockconnect:<version>
+docker build --build-arg VERSION=<version> --build-arg JAVA_VERSION=<java version>-jre -t aspruyt/bedrockconnect:<version>-jre<java version> .
+docker push aspruyt/bedrockconnect:<version>-jre<java version>
 ```
 
 ## Run with Docker
@@ -27,7 +27,7 @@ docker push aspruyt/bedrockconnect:<version>
 ```bash
 docker run -d --name bedrockconnect \
   -p 19132:19132/udp \
-  aspruyt/bedrockconnect:<version>
+  aspruyt/bedrockconnect:<version>-jre<java version>
 ```
 
 ## GitHub Actions Release Workflow
