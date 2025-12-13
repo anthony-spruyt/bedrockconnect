@@ -29,15 +29,29 @@ jobs:
           push: true
           build-args: |
             VERSION=${{ github.event.inputs.version }}
+            JAVA_VERSION=25-jre
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-            aspruyt/bedrockconnect:${{ github.event.inputs.version }}
             aspruyt/bedrockconnect:latest
+            aspruyt/bedrockconnect:${{ github.event.inputs.version }}
+            aspruyt/bedrockconnect:${{ github.event.inputs.version }}-jre25
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          build-args: |
+            VERSION=${{ github.event.inputs.version }}
+            JAVA_VERSION=17-jre
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: |
+            aspruyt/bedrockconnect:${{ github.event.inputs.version }}-jre17
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.version }}
-          name: ${{ github.event.inputs.version }}
+          tag_name: "${{ github.event.inputs.version }}"
+          name: "${{ github.event.inputs.version }}"
           draft: false
           prerelease: false

@@ -6,7 +6,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/aspruyt/bedrockconnect)](https://hub.docker.com/r/aspruyt/bedrockconnect)
 
 Minecraft Bedrock dedicated server connector for routing player connections.
-**Note:** This is a rebuild of [Pugmatt/BedrockConnect](https://github.com/Pugmatt/BedrockConnect) using a newer Java version to support TLS 1.3.
+**Note:** This is a rebuild of [Pugmatt/BedrockConnect](https://github.com/Pugmatt/BedrockConnect) using newer Java versions to support TLS 1.3.
 
 **Configuration:** Refer to the original [Pugmatt/BedrockConnect](https://github.com/Pugmatt/BedrockConnect) repository for configuration details and custom server setup.
 
